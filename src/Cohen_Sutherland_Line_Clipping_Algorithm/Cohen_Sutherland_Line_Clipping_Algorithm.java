@@ -176,10 +176,8 @@ class Cohen_Sutherland_Line_Clipping_Algorithm implements GLEventListener {
             code += LEFT;
         if (y < y_min)
             code += BOTTOM;
-
         return code;
     }
-
 
     public void reshape(GLAutoDrawable drawable, int x, int y, int width,
                         int height) {

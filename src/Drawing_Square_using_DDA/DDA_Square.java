@@ -66,7 +66,6 @@ class ThirdGLEventListener implements GLEventListener {
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
 //        gl.glClear(GL2.GL_COLOR_BUFFER_BIT | GL2.GL_DEPTH_BUFFER_BIT);
 
-
         int _x = 0, _y = 0;
 
         gl.glPushMatrix();
@@ -81,7 +80,6 @@ class ThirdGLEventListener implements GLEventListener {
         drawLine(gl, _x, _y, 100, _y);      //left line
         gl.glTranslatef(0, 0, 0);
         gl.glPopMatrix();
-
 
         gl.glPushMatrix();
         gl.glTranslatef(-_x, 100, 0);
@@ -108,7 +106,6 @@ class ThirdGLEventListener implements GLEventListener {
 
     protected static void drawLine(GL2 gl, float x1, float y1, float x2, float y2) {
         //DDA Line drawing algorithm
-
         gl.glPointSize(2.0f);
         gl.glBegin(GL2.GL_POINTS);// begin plotting points
         float m = (y2 - y1) / (x2 - x1);
@@ -129,11 +126,8 @@ class ThirdGLEventListener implements GLEventListener {
             x += xInc;
             y += yInc;
             gl.glVertex2f(x, y);
-
         }
-
         gl.glEnd();//end drawing of points
-
     }
     public void dispose(GLAutoDrawable arg0) {
 

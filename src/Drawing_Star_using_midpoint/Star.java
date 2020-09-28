@@ -20,9 +20,9 @@ import java.util.Scanner;
  * license   MIT
  * + ------------------------------------------------------------------------------------------------+
  */
+
 public class Star {
     public static void main(String args[]) {
-
         //getting the capabilities object of GL2 profile
         final GLProfile profile = GLProfile.get(GLProfile.GL2);
         GLCapabilities capabilities = new GLCapabilities(profile);
@@ -40,9 +40,8 @@ public class Star {
     }
 }
 
-
 class Drawing_Star implements GLEventListener {
-    private int x0, y0, x1, y1, r;
+    private int r;
     private GLU glu;
     private Mid_Point_Line_Drawer mid_point_line_drawer;
 
@@ -75,7 +74,6 @@ class Drawing_Star implements GLEventListener {
             int _y = (int) (r * Math.sin(theta));
             x_list.add(_x);
             y_list.add(_y);
-
         }
         for (int i = 0; i < 5; i++) {
             int j = i + 2;
@@ -83,10 +81,7 @@ class Drawing_Star implements GLEventListener {
                 j = j % 5;
             mid_point_line_drawer.drawMyLine(gl, x_list.get(i), y_list.get(i), x_list.get(j), y_list.get(j)); //draw line
         }
-
-
     }
-
 
     public void reshape(GLAutoDrawable drawable, int x, int y, int width,
                         int height) {

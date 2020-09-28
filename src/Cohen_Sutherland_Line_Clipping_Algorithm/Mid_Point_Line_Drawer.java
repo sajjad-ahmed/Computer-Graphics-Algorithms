@@ -73,7 +73,6 @@ public class Mid_Point_Line_Drawer {
             if (d < 0) {
                 x++;
                 d = d + dE;
-
             } else {
                 x++;
                 y++;
@@ -100,12 +99,10 @@ public class Mid_Point_Line_Drawer {
             if (d >= 0) {
                 y++;
                 d = d + dN;
-
             } else {
                 y++;
                 x++;
                 d = d + dNE;
-
             }
             gl.glVertex2f(x, y);
         }
@@ -127,12 +124,10 @@ public class Mid_Point_Line_Drawer {
             if (d < 0) {
                 y++;
                 d = d + dN;
-
             } else {
                 y++;
                 x--;
                 d = d + dNW;
-
             }
             gl.glVertex2f(x, y);
         }
@@ -205,7 +200,6 @@ public class Mid_Point_Line_Drawer {
                 x--;
                 y--;
                 d = d + dSW;
-
             } else {
                 y--;
                 d = d + dS;
@@ -231,7 +225,6 @@ public class Mid_Point_Line_Drawer {
                 x++;
                 y--;
                 d = d + dSE;
-
             } else {
                 y--;
                 d = d + dS;
@@ -256,7 +249,6 @@ public class Mid_Point_Line_Drawer {
             if (d >= 0) {
                 x++;
                 d = d + dE;
-
             } else {
                 x++;
                 y--;

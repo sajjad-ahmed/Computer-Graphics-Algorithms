@@ -18,9 +18,9 @@ import java.util.Scanner;
  * license   MIT
  * + ------------------------------------------------------------------------------------------------+
  */
+
 public class Mid_Point_Square {
     public static void main(String args[]) {
-
         //getting the capabilities object of GL2 profile
         final GLProfile profile = GLProfile.get(GLProfile.GL2);
         GLCapabilities capabilities = new GLCapabilities(profile);
@@ -70,17 +70,13 @@ class ThirdGLEventListener_Square implements GLEventListener {
         GL2 gl = drawable.getGL().getGL2();
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
 
-
         int dy = y1 - y0, dx = x1 - x0;
-
         int distance = (int) Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
-
         double mg = (double) dy / dx;
-
         double theta = Math.atan(mg) * 180 / Math.PI;
+
         gl.glTranslated(x1, y1, 0);
         gl.glRotated(theta, 0, 0, 1);
-
 
         gl.glPushMatrix();
         dlh.drawMyLine(gl, 0, 0, distance, 0);
@@ -96,10 +92,7 @@ class ThirdGLEventListener_Square implements GLEventListener {
         gl.glRotated(-90, 0, 0, 1);
         dlh.drawMyLine(gl, 0, 0, distance, 0);
         gl.glPopMatrix();
-
-
     }
-
 
     public void reshape(GLAutoDrawable drawable, int x, int y, int width,
                         int height) {
@@ -108,6 +101,4 @@ class ThirdGLEventListener_Square implements GLEventListener {
     public void dispose(GLAutoDrawable arg0) {
 
     }
-
-
 }

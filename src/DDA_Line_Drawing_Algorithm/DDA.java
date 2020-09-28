@@ -1,5 +1,11 @@
 package DDA_Line_Drawing_Algorithm;
 
+import javax.media.opengl.*;
+import javax.media.opengl.awt.GLCanvas;
+import javax.media.opengl.glu.GLU;
+import javax.swing.*;
+import java.util.Scanner;
+
 /**
  * DDA
  * + ------------------------------------------------------------------------------------------------+
@@ -12,13 +18,6 @@ package DDA_Line_Drawing_Algorithm;
  * license   MIT
  * + ------------------------------------------------------------------------------------------------+
  */
-
-import javax.media.opengl.*;
-import javax.media.opengl.awt.GLCanvas;
-import javax.media.opengl.glu.GLU;
-import javax.swing.*;
-import java.util.Scanner;
-
 
 public class DDA {
     public static void main(String args[]) {
@@ -39,7 +38,6 @@ public class DDA {
     }
 }
 
-
 class ThirdGLEventListener implements GLEventListener {
     private int x0, y0, x1, y1;
     private GLU glu;
@@ -55,6 +53,7 @@ class ThirdGLEventListener implements GLEventListener {
         System.out.println("enter y1 : ");
         y1 = scanner.nextInt();
 
+//      Uncomment to try with defined values of x0,x1,y0,y1
 //        x0 = -200;
 //        y0 = -150;
 //        x1 = -50;
@@ -62,7 +61,6 @@ class ThirdGLEventListener implements GLEventListener {
 
         GL2 gl = gld.getGL().getGL2();
         glu = new GLU();
-
         gl.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         gl.glViewport(-250, -150, 250, 150);
         gl.glMatrixMode(GL2.GL_PROJECTION);
@@ -71,9 +69,6 @@ class ThirdGLEventListener implements GLEventListener {
     }
 
     public void display(GLAutoDrawable drawable) {
-        System.out.println("b--------0" +
-                "1" +
-                "");
         GL2 gl = drawable.getGL().getGL2();
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
         int dx = x0 - x1;
@@ -81,10 +76,7 @@ class ThirdGLEventListener implements GLEventListener {
         float m = dy / dx;
         float x = x0;
         float y = y0;
-        System.out.println("----m-------:" + m);
-        if (m > 0 && m < 1) {
-            System.out.println("+++++0<m&&m<1");
-
+        if (m > 0 && m < 1) { // 0<m && m<1
             while (x < x1) {
                 int p = (2 * dy) - dx;
                 int p1 = 2 * dy;
@@ -98,9 +90,7 @@ class ThirdGLEventListener implements GLEventListener {
                 x += .001f;
                 gl.glVertex2d(x, y);
             }
-        } else if (m > -1 && m < 0) {
-            System.out.println("+++++-1<m&&m<0");
-
+        } else if (m > -1 && m < 0) { // for -1<m && m<0
             while (x < x1) {
                 int p = -(2 * dy) - dx;
                 int p1 = -2 * dy;
@@ -114,8 +104,7 @@ class ThirdGLEventListener implements GLEventListener {
                 x += .001f;
                 gl.glVertex2d(x, y);
             }
-        } else if (m > 1) {
-            System.out.println("+++++m>1");
+        } else if (m > 1) { // for m>1
             while (y < y1) {
                 int p = (2 * dx) - dy;
                 int p1 = 2 * dx;
@@ -129,9 +118,7 @@ class ThirdGLEventListener implements GLEventListener {
                 y += .001f;
                 gl.glVertex2d(x, y);
             }
-        } else if (m < -1) {
-            System.out.println("+++++m<-1");
-
+        } else if (m < -1) { // for m<-1
             while (y1 < y) {
                 int p = -(2 * dx) - dy;
                 int p2 = -2 * dx;
@@ -147,7 +134,6 @@ class ThirdGLEventListener implements GLEventListener {
             }
         }
     }
-
 
     public void reshape(GLAutoDrawable drawable, int x, int y, int width,
                         int height) {

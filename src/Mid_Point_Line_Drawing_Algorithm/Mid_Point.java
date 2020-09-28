@@ -20,7 +20,6 @@ import java.util.Scanner;
  */
 public class Mid_Point {
     public static void main(String args[]) {
-
         //getting the capabilities object of GL2 profile
         final GLProfile profile = GLProfile.get(GLProfile.GL2);
         GLCapabilities capabilities = new GLCapabilities(profile);
@@ -72,7 +71,6 @@ class ThirdGLEventListener implements GLEventListener {
         mp.drawLine(gl, x0, y0, x1, y1);
 
     }
-
 
     public void reshape(GLAutoDrawable drawable, int x, int y, int width,
                         int height) {

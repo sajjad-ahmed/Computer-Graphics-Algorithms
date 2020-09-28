@@ -4,7 +4,6 @@ import javax.media.opengl.*;
 import javax.media.opengl.awt.GLCanvas;
 import javax.media.opengl.glu.GLU;
 import javax.swing.*;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -20,10 +19,8 @@ import java.util.Scanner;
  * + ------------------------------------------------------------------------------------------------+
  */
 
-
 public class Circle_Drawing {
     public static void main(String args[]) {
-
         //getting the capabilities object of GL2 profile
         final GLProfile profile = GLProfile.get(GLProfile.GL2);
         GLCapabilities capabilities = new GLCapabilities(profile);
@@ -47,7 +44,6 @@ class Circle_Drawing_Algorithm implements GLEventListener {
     private GLU glu;
 
     public void init(GLAutoDrawable gld) {
-
         Scanner scanner = new Scanner(System.in);
         System.out.println("enter radius : ");
         radius = scanner.nextInt();
@@ -61,7 +57,6 @@ class Circle_Drawing_Algorithm implements GLEventListener {
         scanner.close();
         GL2 gl = gld.getGL().getGL2();
         glu = new GLU();
-
         gl.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         gl.glViewport(-250, -150, 250, 150);
         gl.glMatrixMode(GL2.GL_PROJECTION);
@@ -104,13 +99,11 @@ class Circle_Drawing_Algorithm implements GLEventListener {
         gl.glVertex2d(-x, -y);
         gl.glVertex2d(-y, -x);
 
-
         gl.glVertex2d(x, -y);
         gl.glVertex2d(y, -x);
         gl.glEnd();
 
     }
-
 
     public void reshape(GLAutoDrawable drawable, int x, int y, int width,
                         int height) {

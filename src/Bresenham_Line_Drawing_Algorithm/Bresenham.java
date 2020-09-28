@@ -72,7 +72,7 @@ class ThirdGLEventListener implements GLEventListener {
         gl.glColor3f(1, 1, 1);
         gl.glBegin(GL2.GL_POINTS);
 
-//Line input
+//        Line input
         System.out.println("Enter value of x0");
         double x0 = sc.nextDouble();
         System.out.println("Enter value of y0");
@@ -114,7 +114,6 @@ class ThirdGLEventListener implements GLEventListener {
                     p = p + p1;
                     x++;
                 }
-
                 gl.glVertex2d(x, y);
                 k++;
             }
@@ -128,20 +127,14 @@ class ThirdGLEventListener implements GLEventListener {
 
             while (k < Math.abs(dx)) {
                 if (p < 0) {
-
                     p += p1;
-
                     y++;
-
                 } else {
-
                     p += p2;
                     x++;
                     y++;
                 }
-
                 gl.glVertex2d(x, y);
-
                 k++;
             }
 
@@ -161,7 +154,6 @@ class ThirdGLEventListener implements GLEventListener {
                     x++;
                     y--;
                 }
-
                 gl.glVertex2d(x, y);
                 k++;
             }
@@ -188,12 +180,10 @@ class ThirdGLEventListener implements GLEventListener {
         gl.glEnd();
     }
 
-
     public void reshape(GLAutoDrawable drawable, int x, int y, int width,
                         int height) {
     }
 
     public void dispose(GLAutoDrawable arg0) {
-
     }
 }

@@ -20,10 +20,8 @@ import java.util.Scanner;
  * + ------------------------------------------------------------------------------------------------+
  */
 
-
 public class Smiley_Drawing {
     public static void main(String args[]) {
-
         //getting the capabilities object of GL2 profile
         final GLProfile profile = GLProfile.get(GLProfile.GL2);
         GLCapabilities capabilities = new GLCapabilities(profile);
@@ -75,9 +73,7 @@ class Draw_Smiley_Using_Circle implements GLEventListener {
         gl.glPushMatrix();
         gl.glTranslated(_x, _y, 0);
 
-
         drawCircle(gl, radius); //---------face
-
 
         ArrayList<Integer> x_list = new ArrayList<>();
         ArrayList<Integer> y_list = new ArrayList<>();
@@ -102,8 +98,6 @@ class Draw_Smiley_Using_Circle implements GLEventListener {
             gl.glPopMatrix();
 
         }
-
-
         gl.glPopMatrix();
     }
 
@@ -133,7 +127,6 @@ class Draw_Smiley_Using_Circle implements GLEventListener {
 
         gl.glVertex2d(-x, -y);
         gl.glVertex2d(-y, -x);
-
 
         gl.glVertex2d(x, -y);
         gl.glVertex2d(y, -x);
