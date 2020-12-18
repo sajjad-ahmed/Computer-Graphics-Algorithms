@@ -1,6 +1,6 @@
 # Computer Graphics Algorithms in java
 
-This repository contains most of my lab works of Computer Graphics Course(CSE423). The codework can be found in the *[src folder](https://github.com/sajjad-ahmed/Computer-Graphics-Algorithms/tree/master/src)* directory
+This repository contains most of my lab works of Computer Graphics Course(CSE423). The codework can be found in the *[src](https://github.com/sajjad-ahmed/Computer-Graphics-Algorithms/tree/master/src)* directory
 
 ## Contents:
 - DDA Line Drawing Algorithm
